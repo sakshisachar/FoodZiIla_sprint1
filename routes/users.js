@@ -11,13 +11,18 @@ router.get('/about', function(req, res){
 });
 
 // Services
-router.get('/servies', function(req, res){
+router.get('/services', function(req, res){
 	res.render('services');
 });
 
 // Contact
 router.get('/contact', function(req, res){
 	res.render('contact');
+});
+
+// Gallery
+router.get('/gallery', function(req, res){
+	res.render('gallery');
 });
 
 // // Register
@@ -27,6 +32,12 @@ router.get('/contact', function(req, res){
 
 // Login
 router.get('/login', function(req, res){
+	res.render('index');
+});
+
+//Register
+router.get('register', function(req, res){
+	res.redirect('/');
 	res.render('index');
 });
 
@@ -49,27 +60,28 @@ router.post('/register', function(req, res){
 	var errors = req.validationErrors();
 
 	if(errors){
+		//req.flash('failure-msg', 'Registration Failed : Passwords were not matching');
 		res.render('index',{
 			errors:errors
 		});
-		// console.log(errors);
-		// req.flash('failure-msg', 'Registration Failed : Passwords were not matching');
+		console.log(errors);
 	} else {
-		var newUser = new User({
-			fname: fname,
-			lname: lname,
-			email: email,
-			password: password
-		});
-
-		//User already registered
+		// //User already registered
 		User.getUserByEmail(email, function(err, user){
 			if(err) throw err;
 
 			if(user){
 				req.flash('failure-msg', 'The Email Id is already registered');
+				console.log("FAILURE");
 				res.redirect('/');
 			}
+		});
+
+		var newUser = new User({
+			fname: fname,
+			lname: lname,
+			email: email,
+			password: password
 		});
 
 		User.createUser(newUser, function(err, user){

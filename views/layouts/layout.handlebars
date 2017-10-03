@@ -43,15 +43,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li><a class="active" href="index.html">Home</a></li>
+								<li><a class="active" href="/">Home</a></li>
 								<li><a href="/users/about">About</a></li>
-								<li><a href="services.html" >Services</a></li>
-								<li><a href="gallery.html" >Gallery</a></li>	
-										<ul class="dropdown-menu agile_short_dropdown">
-											<li><a href="icons.html">Icons</a></li>
-										<li><a href="typography.html">Typography</a></li>
-										</ul>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a href="/users/services" >Services</a></li>
+								<li><a href="/users/gallery" >Gallery</a></li>	
+								<li><a href="/users/contact">Contact</a></li>
 							</ul>
 							<div class="clearfix"> </div>							
 						</div>	
@@ -60,11 +56,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			</div>
 		</div>
+
 		<div class="container">
 			
 			<div class="agile_header_grid">
 				<div class="w3_agile_logo">
-					<h1><a href="index.html">Floriculture</a></h1>
+					<h1><a href="/">FoodZilla</a></h1>
 				</div>
 				<div class="agileits_w3layouts_sign_in">
 					<ul>
@@ -85,21 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //header -->
 <!-- Success or Failure on Sign Up -->
 
-	<div class="row">
-  
-          {{#if success_msg}}
-            <div class="alert alert-success">{{success_msg}}</div>
-          {{/if}}
-
-          {{#if error_msg}}
-            <div class="alert alert-danger">{{error_msg}}</div>
-          {{/if}}
-
-          {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-          {{/if}}
-        
-	</div>
+	
 <!-- pop-up-box -->
 	<div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">
 		<h3 class="agileinfo_sign">Sign In</h3>	
@@ -175,13 +158,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 <div class="row">
+
+    {{#if success_msg}}
+        <div class="alert alert-success">{{success_msg}}</div>
+    {{/if}}
+
+    {{#if error_msg}}
+        <div class="alert alert-danger">{{error_msg}}</div>
+    {{/if}}
+
+    {{#if error}}
+        <div class="alert alert-danger">{{error}}</div>
+   {{/if}}
+        
+
 	{{{body}}}
 </div>
 <!-- //features -->
 <!-- footer -->
 	<div class="footer">
 		<div class="container">
-			<h2><a href="index.html">Floriculture</a></h2>
+			<h2><a href="/">FoodZilla</a></h2>
 			
 			<div class="agileits_w3layouts_nav_right">
 					<ul>
@@ -198,18 +195,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="agileits_w3layouts_nav">
 				<div class="agileits_w3layouts_nav_left">
 					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="icons.html">Icons</a></li>
-						<li><a href="gallery.html">Gallery</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a class="active" href="/">Home</a></li>
+						<li><a href="/users/about">About</a></li>
+						<li><a href="/users/services" >Services</a></li>
+						<li><a href="/users/gallery" >Gallery</a></li>	
+						<li><a href="/users/contact">Contact</a></li>
 					</ul>
 				</div>
-				<h3>(+000) 123 456 789</h3>
+				<h3>(+91) 7222-847-108</h3>
 				<div class="clearfix"> </div>
 			</div>
-			<p>© 2017 Floriculture. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			<p>© 2017 FoodZilla. All rights reserved</p>
 		</div>
 	</div>
 <!-- //footer -->
