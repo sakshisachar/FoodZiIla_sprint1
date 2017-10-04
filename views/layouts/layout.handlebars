@@ -44,10 +44,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
 								<li><a class="active" href="/">Home</a></li>
-								<li><a href="/users/about">About</a></li>
-								<li><a href="/users/services" >Services</a></li>
-								<li><a href="/users/gallery" >Gallery</a></li>	
-								<li><a href="/users/contact">Contact</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#services" >Services</a></li>
+								<li><a href="#gallery" >Gallery</a></li>	
+								<li><a href="#contact">Contact</a></li>
 							</ul>
 							<div class="clearfix"> </div>							
 						</div>	
@@ -65,14 +65,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="agileits_w3layouts_sign_in">
 					<ul>
-						
 						<li><div class="agileinfo_search">
 								<form action="#" method="post">
 									<input type="text" name="Search" placeholder="Type text here..." required="">
 									<input type="submit" value=" ">
 								</form>
 							</div></li>
-							<li><a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign In</a></li>
+							<li><a href="#small-dialog"  class="play-icon popup-with-zoom-anim">Sign In</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"> </div>
@@ -118,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
 		<h3 class="agileinfo_sign">Sign Up</h3>	
 		<div class="agileits_signin_form">
-			<form action="users/register" method="post">
+			<form action="/users/register" method="post">
 				<input type="text" name="fname" placeholder="First Name" required="">
 				<input type="text" name="lname" placeholder="Last Name" required="">
 				<input type="email" name="email" placeholder="Your Email" required="">
@@ -169,7 +168,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     {{#if error}}
         <div class="alert alert-danger">{{error}}</div>
-   {{/if}}
+   	{{/if}}
         
 
 	{{{body}}}
