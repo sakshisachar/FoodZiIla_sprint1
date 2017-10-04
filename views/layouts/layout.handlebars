@@ -71,7 +71,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<input type="submit" value=" ">
 								</form>
 							</div></li>
-							<li><a href="#small-dialog"  class="play-icon popup-with-zoom-anim">Sign In</a></li>
+							
+							{{#if user}}
+								<li><a href="#small-dialog2"  class="play-icon popup-with-zoom-anim">Logout</a></li>
+							{{else}}
+								<li><a href="#small-dialog"  class="play-icon popup-with-zoom-anim">Sign In</a></li>
+							{{/if}}
 					</ul>
 				</div>
 				<div class="clearfix"> </div>
@@ -81,7 +86,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //header -->
 <!-- Success or Failure on Sign Up -->
 
-	
+<!-- Logout -->
+	<div id="small-dialog2" class="mfp-hide w3ls_small_dialog wthree_pop">
+		<h3 class="agileinfo_sign">Hey {{user.fname}} !</h3>	
+		<div class="agileits_signin_form">
+			<form action="/users/logout" method="logout">
+				<input type="submit" value="Confirm Logout">
+			</form>
+		</div>
+	</div>
+<!-- Logout -->
+
 <!-- pop-up-box -->
 	<div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">
 		<h3 class="agileinfo_sign">Sign In</h3>	
