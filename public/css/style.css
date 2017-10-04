@@ -49,7 +49,7 @@ input[type="submit"],input[type="reset"],.w3l_team_grd,.agileits_w3layouts_featu
 }
 .agileits_w3layouts_sign_in{
 	float:right;
-	margin-top: .3em;
+	margin-top: .3em;c
 }
 .agileits_w3layouts_sign_in ul li{
 	display:inline-block;
@@ -208,6 +208,25 @@ ul.dropdown-menu {
 	min-height:300px;
 	text-align: center;
 }
+
+.carousel .item {
+  height: 400px;
+}
+.item img {
+    position: absolute;
+    top: 100;
+    left: 0px;
+    width:1400px;
+    min-height: 400px;
+    margin-bottom: 50px;
+}
+
+#carouselButtons {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+}
+
 .banner h3 {
     color: #fff;
     text-transform: uppercase;
@@ -595,7 +614,7 @@ fieldset {
     margin: 2em auto 0;
     border: 2px solid #d5d2d2;
 	line-height:2em;
-	color:#999;
+	color:#51201E;
 	font-size:14px;
 }
 .w3_agile_features_grid legend{
@@ -690,7 +709,7 @@ fieldset {
     margin-top: 4em;
 }
 .services {
-    background: url(../images/17.jpg) no-repeat 0px 0px;
+    background: url(../images/1.jpg) no-repeat 0px 0px;
     background-size: cover;
     background-attachment: fixed;
     padding: 5em 0;
@@ -882,8 +901,11 @@ fieldset {
 /*-- //footer --*/
 /*-- about --*/
 .about,.services,.team-bottom,.mail{
-	padding:5em 0;
+	padding:10em 0;
 }
+.abt{
+	margin-top : 20px;
+	}
 .w3l_head{
 	font-size: 2.5em;
     font-weight: bold;
@@ -914,6 +936,7 @@ fieldset {
 }
 .agileits_about_left{
 	border-right:1px solid #212121;
+	margin-top:50px;
 }
 .agileits_about_right p{
 	color:#999;
@@ -926,6 +949,7 @@ fieldset {
 }
 .agileits_about_right {
     padding-left: 7em;
+    margin-top:50px;
 }
 .agileits_about_right ul li{
 	display: block;

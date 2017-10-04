@@ -85,7 +85,6 @@ passport.use(new LocalStrategy({
    	User.comparePassword(password, user.password, function(err, isMatch){
    		if(err) throw err;
    		if(isMatch){
-   			console.log("YES");
    			return done(null, user);
    		} else {
    			return done(null, false, {message: 'Invalid password'});
