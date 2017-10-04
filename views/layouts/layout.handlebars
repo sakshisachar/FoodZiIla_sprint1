@@ -24,12 +24,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="/fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
 <link href='/fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 </head>
-	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+ 	$('body').on('click', 'a[href^=#][href*=to]', function(event){
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+
 <body>
 <!-- header -->
 	<div class="header">
 	<div class="w3_agileits_nav">
-	<div class="container">
+		<div class="container">
 				<div class="w3ls-nav">
 					<nav class="navbar navbar-default">
 							<div class="navbar-header">
@@ -43,19 +72,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li><a class="active" href="/">Home</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#services" >Services</a></li>
-								<li><a href="#gallery" >Gallery</a></li>	
-								<li><a href="#contact">Contact</a></li>
+								<li><a class="active scroll" href="/">Home</a></li>
+								<li><a href="#toabout">About</a></li>
+								<li><a href="#toservices" >Services</a></li>
+								<li><a  href="#toourteam" >Team</a></li>	
+								{{#if user}}
+									<li><a href="/users/dashboard">Dashboard</a></li>
+								{{/if}}
 							</ul>
 							<div class="clearfix"> </div>							
 						</div>	
 					</nav>		
 			</div>
 
-			</div>
 		</div>
+	</div>
 
 		<div class="container">
 			

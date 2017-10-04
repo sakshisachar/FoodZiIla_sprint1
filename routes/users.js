@@ -118,4 +118,10 @@ router.get('/logout', function(req, res){
 	res.redirect('/');
 });
 
+// Dashboard
+router.get('/dashboard', function(req, res){
+	res.render('dashboard');
+});
+
+
 module.exports = router;
