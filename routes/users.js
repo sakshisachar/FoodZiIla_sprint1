@@ -4,6 +4,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
+var Restaurant = require('../models/restaurant');
 
 // // Register
 // router.get('/register', function(req, res){
@@ -120,8 +121,26 @@ router.get('/logout', function(req, res){
 
 // Dashboard
 router.get('/dashboard', function(req, res){
-	res.render('dashboard');
+	res.render('dashboard', {layout: false});
 });
 
+// Search
+router.get('/search', function(req, res){
+	res.render('search');
+});
+
+router.post('/search', function(req, res){
+	var city = req.body.city;
+
+	var query = {city : city};
+
+	Restaurant.find(query).toArray(function(err, result){
+		if(err)	throw err;
+
+		console.log(result);
+	});
+
+	res.render('search');
+});
 
 module.exports = router;

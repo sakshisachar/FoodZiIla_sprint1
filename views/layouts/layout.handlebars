@@ -97,9 +97,9 @@ $(document).ready(function(){
 				<div class="agileits_w3layouts_sign_in">
 					<ul>
 						<li><div class="agileinfo_search">
-								<form action="#" method="post">
-									<input type="text" name="Search" placeholder="Type text here..." required="">
-									<input type="submit" value=" ">
+								<form action="/users/search" method="post" id = "searchform">
+									<input type="text" name="search" id="search" placeholder="Type city here..." required="">
+									<input type="submit" value=" "  onclick="convert()">
 								</form>
 							</div></li>
 							
@@ -116,7 +116,16 @@ $(document).ready(function(){
 	</div>
 <!-- //header -->
 <!-- Success or Failure on Sign Up -->
-
+<script type="text/javascript">
+	function convert() {
+	    var str ;
+	    str = document.getElementById("search");
+	    str.value = (str.value.toLowerCase());
+	    //get the form id and submit it
+	    var form = document.getElementById("searchform");
+	    form.submit();
+	}
+</script>
 <!-- Logout -->
 	<div id="small-dialog2" class="mfp-hide w3ls_small_dialog wthree_pop">
 		<h3 class="agileinfo_sign">Hey {{user.fname}} !</h3>	
