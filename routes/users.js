@@ -132,15 +132,17 @@ router.get('/search', function(req, res){
 router.post('/search', function(req, res){
 	var city = req.body.city;
 
-	var query = {city : city};
+	// var query = {city : city};
 
-	Restaurant.find(query).toArray(function(err, result){
+	User.getUserByName(city, function(err, result){
 		if(err)	throw err;
 
 		console.log(result);
+		
+		res.render('search', {
+			result : result
+		});
 	});
-
-	res.render('search');
 });
 
 module.exports = router;

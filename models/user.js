@@ -38,6 +38,11 @@ module.exports.getUserById = function(id, callback){
 	User.findById(id, callback);
 }
 
+module.exports.getUserByName = function(name, callback){
+	var query = {name : name};
+	User.find(name, callback);
+}
+
 module.exports.comparePassword = function(candidatePassword, hash, callback){
 	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
     	if(err) throw err;
