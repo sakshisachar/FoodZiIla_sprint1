@@ -124,6 +124,19 @@ router.get('/dashboard', function(req, res){
 	res.render('dashboard', {layout: false});
 });
 
+// Update Profile
+router.post('/updateProfile', function(req, res){
+	res.render('dashboard', {layout: false});
+});
+
+router.post('registerRestaurant', function(req, res){
+	res.render('dashboard', {layout: false});
+});
+
+router.get('viewRestaurant', function(req, res){
+	res.render('dashboard', {layout: false});
+});
+
 // Search
 router.get('/search', function(req, res){
 	res.render('search');
@@ -131,10 +144,8 @@ router.get('/search', function(req, res){
 
 router.post('/search', function(req, res){
 	var city = req.body.city;
-
-	// var query = {city : city};
-
-	User.getUserByName(city, function(err, result){
+	
+	Restaurant.getRestaurantByCity(city, function(err, result){
 		if(err)	throw err;
 
 		console.log(result);

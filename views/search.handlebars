@@ -22,11 +22,16 @@
 						<button class="closeButton"><img src="/images/cross.png" alt=""></button>
 					</div>
 					<div class="clearfix"> </div>
-					<h4>{{this.lname}}</h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>			
+					<h4>{{this.name}}</h4>
+					<p>{{this.description}}</p>			
 				</div>
 			</div>
+			{{else}}
+				<div class="grid_3 grid_5 w3ls">
+					<div class="alert alert-danger" role="alert">
+					<strong>Sorry !</strong> No available restaurants in current city.
+					</div>
+				</div>
 			{{/each}}
 			
 	</div>
