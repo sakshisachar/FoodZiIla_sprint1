@@ -129,11 +129,36 @@ router.post('/updateProfile', function(req, res){
 	res.render('dashboard', {layout: false});
 });
 
-router.post('registerRestaurant', function(req, res){
-	res.render('dashboard', {layout: false});
+router.post('/registerRestaurant', function(req, res){
+	var name = req.body.name;
+	var owner = req.body.owner;
+	var email = req.body.email;
+	var password = req.body.password;
+	var description = req.body.description;
+	var city = req.body.city;
+	var stars = req.body.stars;
+
+	var newRestaurant = new Restaurant({
+		name : name,
+		owner : owner,
+		email : email,
+		password : password,
+		description : description,
+		city : city,
+		stars : stars
+	});
+
+		Restaurant.createRestaurant(newRestaurant, function(err, user){
+			if(err) throw err;
+			console.log(user);
+		});
+		console.log("Registered Restaurant");
+		req.flash('success_msg', 'Your restaurant is now registered !!');
+
+		res.render('dashboard', {layout: false});
 });
 
-router.get('viewRestaurant', function(req, res){
+router.get('/viewRestaurant', function(req, res){
 	res.render('dashboard', {layout: false});
 });
 
@@ -148,8 +173,6 @@ router.post('/search', function(req, res){
 	Restaurant.getRestaurantByCity(city, function(err, result){
 		if(err)	throw err;
 
-		console.log(result);
-		
 		res.render('search', {
 			result : result
 		});

@@ -103,7 +103,7 @@ $(document).ready(function(){
 					<ul>
 						<li><div class="agileinfo_search">
 								<form action="/users/search" method="post" id = "searchform">
-									<input type="text" name="search" id="search" placeholder="Type city here..." required="">
+									<input type="text" name="city" id="city" placeholder="Type city here..." required="">
 									<input type="submit" value=" "  onclick="convert()">
 								</form>
 							</div></li>
@@ -124,7 +124,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 	function convert() {
 	    var str ;
-	    str = document.getElementById("search");
+	    str = document.getElementById("city");
 	    str.value = (str.value.toLowerCase());
 	    //get the form id and submit it
 	    var form = document.getElementById("searchform");
@@ -256,10 +256,9 @@ $(document).ready(function(){
 				<div class="agileits_w3layouts_nav_left">
 					<ul>
 						<li><a class="active" href="/">Home</a></li>
-						<li><a href="/users/about">About</a></li>
-						<li><a href="/users/services" >Services</a></li>
-						<li><a href="/users/gallery" >Gallery</a></li>	
-						<li><a href="/users/contact">Contact</a></li>
+						<li><a href="#toabout">About</a></li>
+						<li><a href="#toservices" >Services</a></li>
+						<li><a href="#toourteam" >Team</a></li>	
 					</ul>
 				</div>
 				<h3>(+91) 7222-847-108</h3>
