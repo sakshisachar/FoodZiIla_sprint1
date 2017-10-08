@@ -1,3 +1,7 @@
+/* Admin email foodzillaadmin@gmail.com
+   Admin password admin
+*/
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -10,6 +14,10 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+
+const notifier = require('node-notifier');
+
+
 
 mongoose.Promise = global.Promise;
 

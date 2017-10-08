@@ -82,7 +82,7 @@ $(document).ready(function(){
 								<li><a href="#toservices" >Services</a></li>
 								<li><a  href="#toourteam" >Team</a></li>	
 								{{#if user}}
-									<li><a href="/users/dashboard">Dashboard</a></li>
+									<li><a href="/users/admin">Dashboard</a></li>
 								{{/if}}
 							</ul>
 							<div class="clearfix"> </div>							
@@ -219,7 +219,7 @@ $(document).ready(function(){
 <div class="row">
 
     {{#if success_msg}}
-        <div class="alert alert-success">{{success_msg}}</div>
+        <div class="alert alert-success alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>{{success_msg}}</div>
     {{/if}}
 
     {{#if error_msg}}

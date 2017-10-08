@@ -29,6 +29,7 @@
     "express-validator": "*",
     "mongodb": "*",
     "mongoose": "*",
+    "node-notifier": "^5.1.2",
     "nodemon": "^1.12.1",
     "passport": "*",
     "passport-http": "*",

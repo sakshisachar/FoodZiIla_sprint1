@@ -53,6 +53,45 @@ module.exports.getRestaurantByCity = function(city, callback){
 	Restaurant.find(query, callback);
 }
 
+module.exports.getRestaurantByStatus=function(status,callback){
+ 
+        var query={status:status};
+	Restaurant.find(query,callback);
+}
+
+
+module.exports.UpdateStatus=function(email,status,callback){
+	
+	console.log(status);
+	console.log(email);
+
+	var query={email:email};
+	 var newstatus = { $set: { status: status } };
+	Restaurant.findOneAndUpdate(query,newstatus,{upsert:true},callback);
+	
+
+}
+
+module.exports.deleteRestaurantByStatus=function(email,callback){
+	
+	
+	console.log(email);
+
+	 var query={email:email};
+	 
+	Restaurant.findOneAndRemove(query,callback);
+	
+
+}
+
+module.exports.deleteRestaurant=function(email,callback){
+
+	var query={email:email};
+
+	Restaurant.findOneAndRemove(query,callback);
+
+}
+
 module.exports.comparePassword = function(candidatePassword, hash, callback){
 	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
     	if(err) throw err;
